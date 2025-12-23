@@ -62,7 +62,7 @@ const ParentDashboard = () => {
 
   const fetchDashboardData = async (parentId) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/parents/dashboard/${parentId}`);
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/parents/dashboard/${parentId}`);
       const data = await response.json();
       
       if (response.ok) {
@@ -81,7 +81,7 @@ const ParentDashboard = () => {
   const fetchLatestVolunteerReply = async () => {
     if (!user?.id) return;
     try {
-      const response = await fetch(`http://localhost:3000/api/parents/tickets?parentId=${user.id}`);
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/parents/tickets?parentId=${user.id}`);
       const data = await response.json();
       if (response.ok) {
         // Find the latest closed ticket with a volunteerId (i.e., a reply)
@@ -179,7 +179,7 @@ const ParentDashboard = () => {
             alert('Network error during upload. Please try again.');
           });
 
-          xhr.open('POST', 'http://localhost:3000/api/parents/milestone/submit-with-file');
+          xhr.open('POST', 'https://milestone-tracker-jrst.onrender.com/api/parents/milestone/submit-with-file');
           xhr.send(formData);
         });
 
@@ -193,7 +193,7 @@ const ParentDashboard = () => {
         
         console.log('Submitting with URL:', submissionData);
 
-        response = await fetch('http://localhost:3000/api/parents/milestone/submit', {
+        response = await fetch('https://milestone-tracker-jrst.onrender.com/api/parents/milestone/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -282,7 +282,7 @@ const ParentDashboard = () => {
     setTicketSubmitting(true);
     setTicketSuccess(false);
     try {
-      const response = await fetch('http://localhost:3000/api/parents/ticket', {
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/parents/ticket', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

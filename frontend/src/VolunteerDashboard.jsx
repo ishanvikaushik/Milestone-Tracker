@@ -46,7 +46,7 @@ const VolunteerDashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/volunteers/dashboard');
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/volunteers/dashboard');
       const data = await response.json();
       
       if (response.ok) {
@@ -64,7 +64,7 @@ const VolunteerDashboard = () => {
 
   const fetchAllSubmissions = async (status = 'all') => {
     try {
-      const response = await fetch(`http://localhost:3000/api/volunteers/submissions?status=${status}`);
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/volunteers/submissions?status=${status}`);
       const data = await response.json();
       
       if (response.ok) {
@@ -80,7 +80,7 @@ const VolunteerDashboard = () => {
   const fetchTickets = async () => {
     setTicketsLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/api/parents/tickets');
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/parents/tickets');
       const data = await response.json();
       if (response.ok) {
         setTickets(data);
@@ -99,7 +99,7 @@ const VolunteerDashboard = () => {
     setSubmitting(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/volunteers/submission/${selectedSubmission._id}/review`, {
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/volunteers/submission/${selectedSubmission._id}/review`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ const VolunteerDashboard = () => {
     setReplySuccess(false);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/parents/tickets/${ticketId}/reply`, {
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/parents/tickets/${ticketId}/reply`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

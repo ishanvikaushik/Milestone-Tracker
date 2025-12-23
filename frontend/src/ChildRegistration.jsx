@@ -37,7 +37,7 @@ const ChildRegistration = () => {
 
   const checkParentStatus = async (parentId) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/parents/dashboard/${parentId}`);
+      const response = await fetch(`https://milestone-tracker-jrst.onrender.com/api/parents/dashboard/${parentId}`);
       const data = await response.json();
       
       if (response.ok && data.children && data.children.length > 0) {
@@ -89,7 +89,7 @@ const ChildRegistration = () => {
         ageGroup
       };
 
-      const response = await fetch('http://localhost:3000/api/parents/child/register', {
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/parents/child/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

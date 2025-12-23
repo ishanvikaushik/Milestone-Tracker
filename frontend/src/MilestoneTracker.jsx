@@ -25,7 +25,7 @@ const MilestoneTracker = () => {
 
   const fetchMilestones = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/milestones/milestones');
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/milestones/milestones');
       const data = await response.json();
       setMilestones(data);
     } catch (error) {
@@ -44,7 +44,7 @@ const MilestoneTracker = () => {
   const fetchChildren = async () => {
     try {
       // For now, using mock parent ID = 1. In real app, get from authentication
-      const response = await fetch('http://localhost:3000/api/milestones/children/1');
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/milestones/children/1');
       const data = await response.json();
       setChildren(data);
     } catch (error) {
@@ -86,7 +86,7 @@ const MilestoneTracker = () => {
 
     try {
       // API call to submit milestone status
-      const response = await fetch('http://localhost:3000/api/milestones/milestone-status', {
+      const response = await fetch('https://milestone-tracker-jrst.onrender.com/api/milestones/milestone-status', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

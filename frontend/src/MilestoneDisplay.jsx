@@ -21,8 +21,8 @@ const MilestoneDisplay = () => {
       
       // Fetch both milestones and children data
       const [milestonesResponse, childrenResponse] = await Promise.all([
-        fetch('http://localhost:3000/api/milestones'),
-        fetch('http://localhost:3000/api/children')
+        fetch('https://milestone-tracker-jrst.onrender.com/api/milestones'),
+        fetch('https://milestone-tracker-jrst.onrender.com/api/children')
       ]);
       
       if (!milestonesResponse.ok || !childrenResponse.ok) {
