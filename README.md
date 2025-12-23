@@ -265,6 +265,10 @@ The chatbot config script is ignored in git via `frontend/.gitignore` to keep cr
 3. Commit your changes
 4. Push to your fork and open a Pull Request
 
+##Deployments
+1. frontend has been deployed on vercel.
+2. backend has been deployed on render here- https://milestone-tracker-jrst.onrender.com
+
 ---
 
 ## License
